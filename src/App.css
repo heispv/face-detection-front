@@ -14,3 +14,9 @@ button {
   left: 0;
   z-index: -1;
 }
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
