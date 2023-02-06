@@ -31,7 +31,7 @@ const ParticlesBackground = () => {
                             mode: "push",
                         },
                         onHover: {
-                            enable: true,
+                            enable: false,
                             mode: "repulse",
                         },
                         resize: true,
@@ -84,7 +84,7 @@ const ParticlesBackground = () => {
                         type: "circle",
                     },
                     size: {
-                        value: { min: 1, max: 5 },
+                        value: { min: 1, max: 3 },
                     },
                 },
                 detectRetina: true,

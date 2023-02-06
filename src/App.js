@@ -24,6 +24,8 @@ class App extends React.Component {
     const image = document.getElementById("inputImage")
     const width = Number(image.width);
     const height = Number(image.height);
+    console.log(faceBoundingBox);
+    console.log(width, height);
     return {
       leftCol: faceBoundingBox.left_col * width,
       topRow: faceBoundingBox.top_row * height,
@@ -77,7 +79,7 @@ class App extends React.Component {
 
     fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
         .then(response => response.json())
-        .then(result => console.log(this.calculateFaceLocation(result)))
+        .then(result => this.displayFaceBox(this.calculateFaceLocation(result)))
         .catch(error => console.log('error', error));
   }
     
@@ -91,7 +93,7 @@ class App extends React.Component {
           <Logo />
           <Rank />
           <ImageLinkFrom onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-          <FaceRecognition imageUrl={this.state.imageUrl}/>
+          <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl}/>
           {/* <Logo />
           <ImageLinkFrom />
           <FaceRecognition /> */}
