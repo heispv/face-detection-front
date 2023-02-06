@@ -14,15 +14,16 @@ class App extends React.Component {
     super();
     this.state = {
       input: "",
+      imageUrl: "",
     }
   }
 
   onInputChange = (event) => {
-    console.log(event.target.value);
+    this.setState({input: event.target.value})
   }
 
   onButtonSubmit = () => {
-    console.log("click");
+    this.setState({imageUrl: this.state.input})
     
     const USER_ID = 'heispv';
     // Your PAT (Personal Access Token) can be found in the portal under Authentification
@@ -31,7 +32,7 @@ class App extends React.Component {
     // Change these to whatever model and image URL you want to use
     const MODEL_ID = 'face-detection';
     const MODEL_VERSION_ID = '45fb9a671625463fa646c3523a3087d5';    
-    const IMAGE_URL = 'https://samples.clarifai.com/face-det.jpg';
+    const IMAGE_URL = this.state.input;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE TO RUN THIS EXAMPLE
@@ -67,7 +68,8 @@ class App extends React.Component {
     // this will default to the latest version_id
 
     fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
-        .then(response => console.log(response))
+        .then(response => response.json())
+        .then(result => console.log(result.outputs[0].data.regions[0].region_info.bounding_box))
         // .then(result => console.log(result))
         .catch(error => console.log('error', error));
   }
@@ -82,7 +84,7 @@ class App extends React.Component {
           <Logo />
           <Rank />
           <ImageLinkFrom onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-          <FaceRecognition />
+          <FaceRecognition imageUrl={this.state.imageUrl}/>
           {/* <Logo />
           <ImageLinkFrom />
           <FaceRecognition /> */}
