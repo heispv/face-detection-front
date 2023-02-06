@@ -1,12 +1,5 @@
 import React from "react";
 import "./ImageLinkFrom.css"
-import Clarifai from 'clarifai';
-
-
-// const app = new Clarifai.App({
-//   apiKey: '4081350e80244ae89d9826f80f117210'
-//  });
- 
 
 const ImageLinkFrom = ({ onInputChange, onButtonSubmit }) => {
   return (
