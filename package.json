@@ -1,7 +1,6 @@
 {
   "name": "face-detection-front",
   "version": "0.1.0",
-  "homepage": "https://heispv.github.io/face-detection-front",
   "private": true,
   "homepage": "https://heispv.github.io/face-detection-front",
   "dependencies": {
