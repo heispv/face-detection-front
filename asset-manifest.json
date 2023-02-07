@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/face-detection-front/static/css/main.9c66e789.css",
+    "main.js": "/face-detection-front/static/js/main.b2f8267d.js",
+    "static/js/787.93d59b38.chunk.js": "/face-detection-front/static/js/787.93d59b38.chunk.js",
+    "static/media/brain.png": "/face-detection-front/static/media/brain.fbbe1829517558624f3e.png",
+    "index.html": "/face-detection-front/index.html",
+    "main.9c66e789.css.map": "/face-detection-front/static/css/main.9c66e789.css.map",
+    "main.b2f8267d.js.map": "/face-detection-front/static/js/main.b2f8267d.js.map",
+    "787.93d59b38.chunk.js.map": "/face-detection-front/static/js/787.93d59b38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c66e789.css",
+    "static/js/main.b2f8267d.js"
+  ]
+}
